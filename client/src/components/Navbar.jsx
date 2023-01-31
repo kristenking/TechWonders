@@ -44,11 +44,12 @@
 
 // export default Navbar;
 import React from "react";
-import { Box, Image, Input, Link, useColorMode } from "@chakra-ui/react";
+import { Box, Image, Input, Link, useColorMode, Icon, Text} from "@chakra-ui/react";
+import { GiRobotLeg } from "react-icons/gi";
 
 const Navbar = () => {
   const { colorMode } = useColorMode();
-  const bgColor = { light: "teal.500", dark: "teal.200" };
+  const bgColor = { light: "teal.900", dark: "teal.200" };
   const color = { light: "white", dark: "gray.800" };
 
   return (
@@ -60,12 +61,13 @@ const Navbar = () => {
       bg={bgColor[colorMode]}
       color={color[colorMode]}
     >
-      <Box flex={1}>
-        <Link to="/">
-          <Image src="/logo.svg" alt="E-commerce Shop" />
-        </Link>
+  
+      <Box display="flex" flex={1} alignItems="center">
+      <Icon as={GiRobotLeg} h={10} width={10} mr={2} color='green.400'/>
+      <Text fontWeight='extrabold'>Tech Wonders</Text>
       </Box>
-      <Box display="flex">
+     
+      <Box display="flex" alignItems='center'>
         <Link to="/" mx={2}>
           Home
         </Link>
@@ -75,6 +77,9 @@ const Navbar = () => {
         <Link to="/about" mx={2}>
           About
         </Link>
+        <Box mr={2}>
+        <Input placeholder="Search products..." />
+      </Box>
         <Link to="/cart">
           <Box
             as="span"
@@ -87,9 +92,6 @@ const Navbar = () => {
             Cart
           </Box>
         </Link>
-      </Box>
-      <Box>
-        <Input placeholder="Search products..." />
       </Box>
     </Box>
   );
