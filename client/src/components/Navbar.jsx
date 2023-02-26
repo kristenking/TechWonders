@@ -23,7 +23,7 @@ const Navbar = () => {
 
   const { isOpen, onClose, onOpen } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
-  const bgColor = { light: "teal.900", dark: "teal.200" };
+  const bgColor = { light: "#082F3D", dark: "#036488" };
   const color = { light: "white", dark: "gray.800" };
 
   return (
